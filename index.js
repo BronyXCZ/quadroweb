@@ -5,6 +5,6 @@ app.get("", (req, res) => {
     res.send("Hello world!");
 })
 
-app.listen(PORT, () => {
+app.listen(port, () => {
     console.log("App up at port " + port)
 })
