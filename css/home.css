@@ -1,0 +1,348 @@
+.body {
+    background-color: #212121;
+}
+
+.maindiv {
+    margin-left: calc(28%);
+    margin-right: calc(28%);
+}
+
+/* BACKGROUND VIDEO */
+.backgroundvideo-overlay {
+    margin: -8px;
+    border: 0;
+    padding: 0;
+    width: 100%;
+    aspect-ratio: 16/9;
+    position: absolute;
+    z-index: -100;
+    background: linear-gradient(rgba(33, 33, 33, 0.8) 0%, rgba(33, 33, 33, 1) 90%);
+}
+
+.backgroundvideo {
+    margin: -8px;
+    border: 0;
+    padding: 0;
+    width: 100%;
+    aspect-ratio: 16/9;
+    position: absolute;
+    z-index: -101;
+}
+
+/* UPPER DIV. */
+.upperdiv {
+    background-color: #21212100;
+    padding-top: 20px;
+    align-self: center;
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.upperdiv-clickable {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+.upperdiv-mainbuttons {
+    height: max-content;
+    display: flex;
+    align-items: center;
+}
+
+.navbutton-link {
+    margin: 0;
+    padding: 20px;
+    border: 0;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #7d7d7d;
+    font-family: 'Noto Sans', serif;
+    transition: color 0.3s ease-out;
+    cursor: pointer;
+}
+.navbutton-link:hover {
+    color: #03D56E
+}
+
+.upperdiv-logo {
+    border-radius: 12px;
+    height: 75px;
+    aspect-ratio: auto;
+    filter: opacity(80%) grayscale(100%);
+    transition: filter 0.1s ease-out;
+}
+.upperdiv-clickable:hover .upperdiv-logo {
+    filter: opacity(100%) grayscale(0%);
+}
+
+.upperdiv-separator {
+    margin: 80px 0% 0% 0%;
+    border: 0;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #7d7d7d;
+}
+
+/* APPLICATIONS */
+.appsreminder {
+    height: max-content;
+    width: auto;
+    margin-top: 50px;
+    padding: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: #03cad5;
+    background-color: #03cad510;
+    font-size: 17px;
+    font-weight: 300;
+    text-decoration: none;
+    text-align: center;
+    color: #e0e0e0;
+    font-family: 'Noto Sans', serif;
+}
+
+.appsreminder-link {
+    margin: 0;
+    border: 0;
+    color: #03cad5;
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
+    font-family: 'Noto Sans', serif;
+    transition: color 0.1s ease-out;
+    cursor: poNoto Sans;
+}
+.appsreminder-link:hover {
+    color: #00f1f6;
+}
+
+/* ABOUT US */
+.aboutusdiv {
+    padding-top: 50px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.aboutussubdiv {
+    margin-left: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.aboutusimg {
+    border-radius: 10px;
+    width: 20vw;
+    aspect-ratio: auto;
+}
+
+.aboutusdiv-maintext {
+    margin: 0;
+    padding-bottom: 20px;
+    height: auto;
+    width: 100%;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 900;
+    font-family: 'Noto Sans', serif;
+    color: #ffffff;
+}
+
+.aboutusdiv-maintext[text-align="right"] {
+    text-align: right;
+}
+.aboutusdiv-maintext[text-align="left"] {
+    text-align: left;
+}
+
+.aboutusdiv-detailtext {
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: auto;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 200;
+    font-family: 'Noto Sans', serif;
+    color: #e7e7e7;
+}
+
+.aboutusdiv-detailtext[text-align="right"] {
+    text-align: right;
+}
+.aboutusdiv-detailtext[text-align="left"] {
+    text-align: left;
+}
+
+.aboutusdiv-detailtext-link {
+    text-decoration: none;
+    color: #00fbff;
+    font-weight: 300;
+    font-family: 'Noto Sans', serif;
+    transition: color 0.2s ease-out;
+    cursor: pointer;
+}
+.aboutusdiv-detailtext-link:hover {
+    color: #03D56E
+}
+
+/* GAMES */
+.ourgamesdiv {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+.ourgamesdiv-title {
+    margin: 0;
+    padding-bottom: 20px;
+    height: auto;
+    width: 100%;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 900;
+    font-family: 'Noto Sans', serif;
+    color: #ffffff;
+}
+
+.ourgamessubdiv {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+.ourgamesdiv-game {
+    margin: 10px;
+    border-radius: 10px;
+    background: #00d4cd00;
+    width: 400px;
+    display: flex;
+    opacity: 0.6;
+    transition: opacity 0.2s ease-out, background 0.2s ease-out, width 0.2s ease-out;
+}
+.ourgamesdiv-game:hover {
+    background: #00d4cd;
+    opacity: 1;
+}
+
+.ourgamesdiv-game-img {
+    margin: 1px 1px -3px 1px;
+    padding: 0;
+    border: 0;
+    border-radius: 10px;
+    width: calc(100% - 2px);
+    aspect-ratio: 16/9;
+}
+
+.ourgamesdiv-game-link {
+    margin: 0;
+    border: 0;
+    width: 100%;
+}
+.ourgamesdiv-game-link:hover {
+    cursor: pointer;
+}
+
+/* SOCIALS DIV. */
+.socialsdiv {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+.socialsdiv-title {
+    margin: 0;
+    padding-bottom: 20px;
+    height: auto;
+    width: 100%;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 900;
+    font-family: 'Noto Sans', serif;
+    color: #ffffff;
+}
+
+.socialssubdiv {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.socialsdiv-social {
+    margin: 5px;
+    padding: 0;
+    border-radius: 8px;
+    height: 90px;
+    aspect-ratio: 16/5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease-out;
+}
+.socialsdiv-social:hover {
+    border: var(--themecolour, #ffffff);
+    background-color: var(--themecolour, #ffffff);
+}
+
+.socialdiv-social-link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-decoration: none;
+}
+.socialdiv-social-link:hover {
+    cursor: pointer;
+}
+
+.socialsdiv-social-img {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    height: 35%;
+    opacity: 0.4;
+    transition: opacity 0.2s ease-out;
+}
+.socialdiv-social-link:hover .socialsdiv-social-img {
+    opacity: 1;
+}
+
+.socialdiv-social-subtext {
+    margin: 0;
+    padding: 5px;
+    border: 0;
+    background: #00000000;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    font-family: 'Noto Sans', serif;
+    opacity: 0.4;
+    transition: opacity 0.2s ease-out;
+}
+.socialdiv-social-link:hover .socialdiv-social-subtext {
+    opacity: 1;
+}
