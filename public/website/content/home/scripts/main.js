@@ -1,7 +1,3 @@
-// Constants
-const proxy_address = 'https://qsp-9bf3216ba15c.herokuapp.com/'
-const website_base = 'https://qsweb-c37752f0ec35.herokuapp.com'
-
 // Functions
 async function socials_updateData() {
     let group_data = await new Promise((resolve) => {
