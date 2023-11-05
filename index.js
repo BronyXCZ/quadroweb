@@ -1,10 +1,9 @@
-document.addEventListener('DOMContentLoaded', function () {
-    fetch('./sites/home.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('contentContainer').innerHTML = data;
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-});
+const fs = require('fs');
+
+fs.readFile('./sites/home.html', 'utf8', (err, data) => {
+    if (err) {
+        console.error(err);
+    } else {
+        console.log(data);
+    }
+})
