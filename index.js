@@ -1,49 +1,15 @@
-const http = require('http');
-const fs = require('fs');
+const express = require('express');
 const path = require('path');
+const app = express();
+exports.app = app;
 
-const hostname = '0.0.0.0';
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
+exports.PORT = PORT;
 
-const server = http.createServer((req, res) => {
-  const filePath = '.' + req.url;
-  const extname = path.extname(filePath);
-  let contentType = 'text/html';
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, 'public')));
 
-  switch (extname) {
-    case '.js':
-      contentType = 'text/javascript';
-      break;
-    case '.css':
-      contentType = 'text/css';
-      break;
-    case '.png':
-      contentType = 'image/png';
-      break;
-    case '.jpg':
-      contentType = 'image/jpg';
-      break;
-  }
-
-  fs.readFile(filePath, (err, content) => {
-    if (err) {
-      if (err.code === 'ENOENT') {
-        // File not found
-        res.writeHead(404);
-        res.end('File not found');
-      } else {
-        // Server error
-        res.writeHead(500);
-        res.end('Server error');
-      }
-    } else {
-      // File found, serve the content
-      res.writeHead(200, { 'Content-Type': contentType });
-      res.end(content, 'utf-8');
-    }
-  });
-});
-
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+// Set up a route for the home page
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
