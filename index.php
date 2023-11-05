@@ -5,14 +5,10 @@ $requestedResource = $_SERVER['REQUEST_URI'];
 // Define the public directory
 $publicDirectory = __DIR__ . '/public';
 
-// Serve the index.html file if the requested resource is the root or index.html
-if (($requestedResource === '/') || ($requestedResource === '/index.html')) {
+if (($requestedResource == '/') || ($requestedResource == '/index.html')) {
     require $publicDirectory . '/index.html';
     return;
-}
-
-// Serve the updates.html file if the requested resource is the root or updates.html
-if (($requestedResource === '/updates') || ($requestedResource === '/updates.html')) {
+} elseif (($requestedResource == '/updates') || ($requestedResource == '/updates.html')) {
     require $publicDirectory . '/updates.html';
     return;
 }
