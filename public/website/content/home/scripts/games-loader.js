@@ -65,6 +65,6 @@ function loop() {
     setTimeout(function() {
         projects_update()
         loop()
-    }, 10*1000)
+    }, 15*1000)
 }
 projects_update()
