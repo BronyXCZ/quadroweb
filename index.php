@@ -5,8 +5,7 @@ $requestedResource = $_SERVER['REQUEST_URI'];
 // Define the public directory
 $publicDirectory = __DIR__ . '/public';
 
-header('Access-Control-Allow-Origin: http://quadrostudios.xyz');
-header('Content-Type: application/json');
+
 
 switch ($requestedResource) {
     case '/updates':
