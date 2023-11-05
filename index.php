@@ -5,6 +5,8 @@ $requestedResource = $_SERVER['REQUEST_URI'];
 // Define the public directory
 $publicDirectory = __DIR__ . '/public';
 
+echo $requestedResource;
+
 switch ($requestedResource) {
     case 'updates':
         require $publicDirectory . '/updates.html';
