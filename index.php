@@ -11,6 +11,12 @@ if ($requestedResource === '/' || $requestedResource === '/index.html') {
     return;
 }
 
+// Serve the updates.html file if the requested resource is the root or updates.html
+if ($requestedResource === '/updates' || $requestedResource === '/updates.html') {
+    require $publicDirectory . '/updates.html';
+    return;
+}
+
 // Serve other files directly from the public directory
 if (file_exists($publicDirectory . $requestedResource)) {
     return false; // Let the server handle the request as is
