@@ -5,7 +5,7 @@ $requestedResource = $_SERVER['REQUEST_URI'];
 // Define the public directory
 $publicDirectory = __DIR__ . '/public';
 
-header('Access-Control-Allow-Origin: http://quadrostudios.xyz');
+header('Access-Control-Allow-Origin: http://quadrostudios.xyz, https://qsweb-c37752f0ec35.herokuapp.com');
 
 switch ($requestedResource) {
     case '/updates':
