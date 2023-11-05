@@ -1,3 +1,5 @@
+console.log('Application running')
+
 const app = require('express')();
 const port = process.env.PORT || 3000;
 
