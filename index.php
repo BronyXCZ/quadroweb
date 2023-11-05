@@ -5,7 +5,7 @@ $requestedResource = $_SERVER['REQUEST_URI'];
 // Define the public directory
 $publicDirectory = __DIR__ . '/public';
 
-echo $requestedResource;
+header('Access-Control-Allow-Origin: http://quadrostudios.xyz');
 
 switch ($requestedResource) {
     case '/updates':
