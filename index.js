@@ -11,5 +11,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Set up a route for the home page
 app.get('/', (req, res) => {
+  console.log("get request");
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
