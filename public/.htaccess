@@ -1,6 +1,6 @@
 RewriteEngine On
 
-Header always set Access-Control-Allow-Origin "http://quadrostudios.xyz, https://qsp-9bf3216ba15c.herokuapp.com/"
+Header always set Access-Control-Allow-Origin "https://qsp-9bf3216ba15c.herokuapp.com/"
 
 # If the requested resource is a file or directory, serve it directly
 RewriteCond %{REQUEST_FILENAME} -f [OR]
