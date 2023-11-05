@@ -4,7 +4,7 @@ const proxy_address = 'https://qsp-9bf3216ba15c.herokuapp.com/';
 // Functions
 async function projects_update() {
     let group_data = await new Promise((resolve) => {
-        fetch(proxy_address + 'https://games.roblox.com/v2/groups/9145179/games?accessFilter=1&limit=10&sortOrder=Desc')
+        fetch(proxy_address + 'https://games.roblox.com/v2/groups/9145179/games?accessFilter=2&limit=10&sortOrder=Desc')
         .then(response => {
             resolve(response.json());
         })
