@@ -1,8 +1,10 @@
-console.log('Application running')
-
-const app = require('express')();
-const port = process.env.PORT || 3000;
-
-app.get("", (req, res) => {
-    res.send(fetch('./sites/home.html').text());
-})
+document.addEventListener('DOMContentLoaded', function () {
+    fetch('./sites/home.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('contentContainer').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+});
