@@ -2,11 +2,8 @@
 // Get the requested resource
 $requestedResource = $_SERVER['REQUEST_URI'];
 
-if ($requestedResource) {
-    header('Access-Control-Allow-Origin: http://quadrostudios.xyz');
-    header('Access-Control-Allow-Credentials: true');
-    header('Access-Control-Max-Age: 86400');
-}
+header('Access-Control-Allow-Origin: http://quadrostudios.xyz');
+header('Content-Type: application/json');
 
 // Define the public directory
 $publicDirectory = __DIR__ . '/public';

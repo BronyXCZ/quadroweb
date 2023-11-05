@@ -1,10 +1,6 @@
 RewriteEngine On
 
-<IfModule mod_headers.c>
-    SetEnvIf Origin "http://quadrostudios\.xyz$" AccessControlAllowOrigin=$0
-    Header add Access-Control-Allow-Origin %{AccessControlAllowOrigin}e env=AccessControlAllowOrigin
-    Header set Access-Control-Allow-Credentials true
-</IfModule>
+Header set Access-Control-Allow-Origin "http://quadrostudios.xyz"
 
 # If the requested resource is a file or directory, serve it directly
 RewriteCond %{REQUEST_FILENAME} -f [OR]
