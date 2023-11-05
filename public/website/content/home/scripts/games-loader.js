@@ -1,5 +1,5 @@
 // Constants
-const proxy_address = '' // https://qsp-9bf3216ba15c.herokuapp.com/
+const proxy_address = 'https://qsp-9bf3216ba15c.herokuapp.com/'
 
 // Functions
 async function projects_update() {
@@ -31,7 +31,7 @@ async function projects_update() {
         }
 
         let element_prefab_html = await new Promise((resolve) => {
-            fetch(proxy_address + 'http://quadrostudios.xyz/website/content/home/prefabs/ourgamesdiv-game.html')
+            fetch('http://quadrostudios.xyz/website/content/home/prefabs/ourgamesdiv-game.html')
             .then(response => {
                 resolve(response.text())
             })
