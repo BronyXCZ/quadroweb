@@ -1,28 +1,49 @@
 const http = require('http');
 const fs = require('fs');
+const path = require('path');
 
 const hostname = '0.0.0.0';
 const port = process.env.PORT || 3000;
 
 const server = http.createServer((req, res) => {
-    fs.readFile('./sites/home.html', 'utf8', (err, data) => {
-        if (err) {
-            res.statusCode = 500;
-            res.setHeader('Content-Type', 'text/plain');
-            console.error('Error:', err);
-            res.end('Experienced error whilst loading an HTML');
-        } else {
-            fs.readFile('./css/home.css', 'utf8', (err, data2) => {
-                console.log(data2);
-            })
+  const filePath = '.' + req.url;
+  const extname = path.extname(filePath);
+  let contentType = 'text/html';
 
-            res.statusCode = 200;
-            res.setHeader('Content-Type', 'text/html');
-            res.end(data);
-        }
-    })
+  switch (extname) {
+    case '.js':
+      contentType = 'text/javascript';
+      break;
+    case '.css':
+      contentType = 'text/css';
+      break;
+    case '.png':
+      contentType = 'image/png';
+      break;
+    case '.jpg':
+      contentType = 'image/jpg';
+      break;
+  }
+
+  fs.readFile(filePath, (err, content) => {
+    if (err) {
+      if (err.code === 'ENOENT') {
+        // File not found
+        res.writeHead(404);
+        res.end('File not found');
+      } else {
+        // Server error
+        res.writeHead(500);
+        res.end('Server error');
+      }
+    } else {
+      // File found, serve the content
+      res.writeHead(200, { 'Content-Type': contentType });
+      res.end(content, 'utf-8');
+    }
+  });
 });
 
 server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
+  console.log(`Server running at http://${hostname}:${port}/`);
 });
