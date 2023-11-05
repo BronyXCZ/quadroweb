@@ -1,11 +1,12 @@
+const app = require('express')();
 const fs = require('fs');
 
-if (typeof document !== undefined) {
+app.get('', (req, res) => {
     fs.readFile('./sites/home.html', 'utf8', (err, data) => {
         if (err) {
             console.error(err);
         } else {
-            document.body.innerHTML = data;
+            res.send(data);
         }
     })
-} else {console.log("Not running on web")}
+})
