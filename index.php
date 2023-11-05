@@ -5,7 +5,7 @@ $requestedResource = $_SERVER['REQUEST_URI'];
 // Define the public directory
 $publicDirectory = __DIR__ . '/public';
 
-print($requestedResource);
+echo "<script>console.log(" . $requestedResource . ");</script>";
 
 if (($requestedResource == '/') || ($requestedResource == '/index.html')) {
     require $publicDirectory . '/index.html';
