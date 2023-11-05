@@ -6,11 +6,11 @@ $requestedResource = $_SERVER['REQUEST_URI'];
 $publicDirectory = __DIR__ . '/public';
 
 switch ($requestedResource) {
-    case '/updates':
-        require $publicDirectory . 'updates.html';
+    case 'updates':
+        require $publicDirectory . '/updates.html';
         break;
     default:
-        require $publicDirectory . 'index.html';
+        require $publicDirectory . '/index.html';
         break;
 }
 
