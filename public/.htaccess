@@ -1,5 +1,7 @@
 RewriteEngine On
 
+Header always set Access-Control-Allow-Origin "http://quadrostudios.xyz"
+
 # If the requested resource is a file or directory, serve it directly
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
