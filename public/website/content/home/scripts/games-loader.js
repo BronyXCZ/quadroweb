@@ -31,7 +31,7 @@ async function projects_update() {
         }
 
         let element_prefab_html = await new Promise((resolve) => {
-            fetch('http://quadrostudios.xyz/website/content/home/prefabs/ourgamesdiv-game.html')
+            fetch(proxy_address + 'http://quadrostudios.xyz/website/content/home/prefabs/ourgamesdiv-game.html')
             .then(response => {
                 resolve(response.text())
             })
