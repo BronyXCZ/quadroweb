@@ -1,11 +1,10 @@
-// Const
-let proxy_address = 'https://qsp-9bf3216ba15c.herokuapp.com/'
-let website_base = 'https://qsweb-c37752f0ec35.herokuapp.com'
+let proxy_address_gamesloader = 'https://qsp-9bf3216ba15c.herokuapp.com/'
+let website_base__gamesloader = 'https://qsweb-c37752f0ec35.herokuapp.com'
 
 // Functions
 async function projects_update() {
     let group_data = await new Promise((resolve) => {
-        fetch(proxy_address + 'https://games.roblox.com/v2/groups/9145179/games?accessFilter=2&limit=10&sortOrder=Desc')
+        fetch(proxy_address_gamesloader + 'https://games.roblox.com/v2/groups/9145179/games?accessFilter=2&limit=10&sortOrder=Desc')
         .then(response => {
             resolve(response.json())
         })
@@ -15,14 +14,14 @@ async function projects_update() {
         for (i = 0; i < group_data.data.length; i++) {
             let game_data = group_data.data[i]
             let thumbnail_data = await new Promise((resolve) => {
-                fetch(proxy_address + 'https://games.roblox.com/v2/games/' + game_data.id + '/media')
+                fetch(proxy_address_gamesloader + 'https://games.roblox.com/v2/games/' + game_data.id + '/media')
                 .then(response => {
                     resolve(response.json())
                 })
             })
             if (thumbnail_data.data && thumbnail_data.data.length > 0) {
                 let thumbnail_address = await new Promise((resolve) => {
-                     fetch(proxy_address + 'https://thumbnails.roblox.com/v1/games/' + game_data.id + '/thumbnails?thumbnailIds=' + thumbnail_data.data[0].imageId + '&size=768x432&format=Png&isCircular=false')
+                     fetch(proxy_address_gamesloader + 'https://thumbnails.roblox.com/v1/games/' + game_data.id + '/thumbnails?thumbnailIds=' + thumbnail_data.data[0].imageId + '&size=768x432&format=Png&isCircular=false')
                      .then(response => {
                         resolve(response.json())
                      })
@@ -32,7 +31,7 @@ async function projects_update() {
         }
 
         let element_prefab_html = await new Promise((resolve) => {
-            fetch(proxy_address + website_base + '/website/content/home/prefabs/ourgamesdiv-game.html')
+            fetch(proxy_address_gamesloader + website_base__gamesloader + '/website/content/home/prefabs/ourgamesdiv-game.html')
             .then(response => {
                 resolve(response.text())
             })
@@ -68,4 +67,5 @@ function loop() {
         loop()
     }, 15*1000)
 }
+loop()
 projects_update()
