@@ -9,7 +9,6 @@ async function projects_update() {
             resolve(response.json());
         })
     })
-    console.log(group_data);
     if (group_data) {
         group_data.data.forEach((game_data) => async function() {
             let thumbnail_data = await new Promise((resolve) => {
@@ -18,6 +17,7 @@ async function projects_update() {
                     resolve(response.json());
                 })
             })
+            console.log(thumbnail_data);
             if (thumbnail_data) {
                 let thumbnail_address = await new Promise((resolve) => {
                      fetch(proxy_address + 'https://thumbnails.roblox.com/v1/games/' + game_data.id + '/thumbnails?thumbnailIds=' + thumbnail_data.data[0].imageId + '&size=768x432&format=Png&isCircular=false')
