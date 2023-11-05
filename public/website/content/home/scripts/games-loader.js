@@ -1,5 +1,5 @@
 // Constants
-const proxy_address = 'https://qsp-9bf3216ba15c.herokuapp.com/'
+const proxy_address = '' // https://qsp-9bf3216ba15c.herokuapp.com/
 
 // Functions
 async function projects_update() {
