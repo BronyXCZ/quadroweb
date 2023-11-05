@@ -10,6 +10,7 @@ async function projects_update() {
         })
     })
     if (group_data) {
+        console.log(group_data.data);
         group_data.data.forEach((game_data) => async function() {
             let thumbnail_data = await new Promise((resolve) => {
                 fetch(proxy_address + 'https://games.roblox.com/v2/games/' + game_data.id + '/media')
