@@ -8,7 +8,7 @@ $publicDirectory = __DIR__ . '/public';
 echo $requestedResource;
 
 switch ($requestedResource) {
-    case 'updates':
+    case '/updates':
         require $publicDirectory . '/updates.html';
         break;
     default:
