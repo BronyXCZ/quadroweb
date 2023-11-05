@@ -1,10 +1,11 @@
 // Constants
-const proxy = 'https://qsp-9bf3216ba15c.herokuapp.com/';
+const proxy_address = 'https://qsp-9bf3216ba15c.herokuapp.com/'
+const website_base = 'https://qsweb-c37752f0ec35.herokuapp.com'
 
 // Functions
 async function socials_updateData() {
     let group_data = await new Promise((resolve) => {
-        fetch(proxy + 'https://groups.roblox.com/v1/groups/9145179')
+        fetch(proxy_address + 'https://groups.roblox.com/v1/groups/9145179')
         .then(response => {
             resolve(response.json());
         })
