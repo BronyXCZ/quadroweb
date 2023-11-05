@@ -1,5 +1,9 @@
 RewriteEngine On
 
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "http://quadrostudios.xyz"
+</IfModule>
+
 # If the requested resource is a file or directory, serve it directly
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
