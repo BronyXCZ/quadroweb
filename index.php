@@ -5,14 +5,13 @@ $requestedResource = $_SERVER['REQUEST_URI'];
 // Define the public directory
 $publicDirectory = __DIR__ . '/public';
 
-echo "<script>console.log(" . $requestedResource . ");</script>";
-
-if (($requestedResource == '/') || ($requestedResource == '/index.html')) {
-    require $publicDirectory . '/index.html';
-    return;
-} elseif (($requestedResource == '/updates') || ($requestedResource == '/updates.html')) {
-    require $publicDirectory . '/updates.html';
-    return;
+switch ($requestedResource) {
+    case '/updates':
+        require $publicDirectory . 'updates.html';
+        break;
+    default:
+        require $publicDirectory . 'index.html';
+        break;
 }
 
 // Serve other files directly from the public directory
